@@ -38,7 +38,7 @@
   
   const activityStore = useActivityStore()
   
-  const { getSortedActivity, activityList, loading } = storeToRefs(activityStore)
+  const { activityList, loading } = storeToRefs(activityStore)
   
   onBeforeMount(() => activityStore.getAllTerminals())
   

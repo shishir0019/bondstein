@@ -17,14 +17,5 @@ export const useActivityStore = defineStore('activity', () => {
     }).finally(() => loading.value = false)
   }
 
-  const getSortedActivity = computed(() => activityList.reduce((groups, activity) => {
-    const date = activity.updateTime.split(' ')[0];
-    if (!groups[date]) {
-      groups[date] = [];
-    }
-    groups[date].push(activity);
-    return groups;
-  }, {}))
-
-  return { loading ,activityList, getAllTerminals, getSortedActivity }
+  return { loading ,activityList, getAllTerminals }
 })
